@@ -10,11 +10,11 @@ export const Card = () => {
 					<p className="card-text">
 						Some quick example text to build on the card title and make up the bulk of the cards content.
 					</p>
-					<a href="#" className="btn btn-primary">
-						Go somewhere
+					<a href="#" className="btn btn-warning text-dark">
+						Read more
 					</a>
-					<a href="#" className="btn btn-outline-warning">
-						like
+					<a href="#" className="btn btn-outline-warning float-right">
+						<i className="fas fa-heart text-warning" />
 					</a>
 				</div>
 			</div>
