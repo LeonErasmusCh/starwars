@@ -1,6 +1,7 @@
 
 body{
     background-color:#343a40;
+    overflow-y: hidden;
 }
 
 .scrolling-wrapper{
@@ -12,6 +13,7 @@ body{
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   height: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {

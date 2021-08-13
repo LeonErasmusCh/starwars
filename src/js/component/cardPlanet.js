@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export const Card = () => {
+export const CardPlanet = () => {
 	return (
 		<div>
 			<div className="card" style={{ width: "18rem" }}>
@@ -11,7 +11,7 @@ export const Card = () => {
 					<p className="card-text">
 						Some quick example text to build on the card title and make up the bulk of the cards content.
 					</p>
-					<Link to="./person">
+					<Link to="../planet">
 						<a href="#" className="btn btn-warning text-dark">
 							Read more
 						</a>

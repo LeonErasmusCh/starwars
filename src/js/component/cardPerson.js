@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export const Card = () => {
+export const CardPerson = () => {
 	return (
 		<div>
 			<div className="card" style={{ width: "18rem" }}>
