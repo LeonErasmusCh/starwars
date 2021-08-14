@@ -6,10 +6,10 @@ import { CardPerson } from "../component/cardPerson";
 import { CardVehicle } from "../component/cardVehicle";
 import { CardPlanet } from "../component/cardPlanet";
 
-export const Home = () => (
+export const Home = props => (
 	<div>
 		<div className="container-fluid">
-			<h2 className="my-2 text-warning">Characters</h2>
+			<h2 className="my-2 text-light">Characters</h2>
 			<div className="d-flex flex-nowrap scrolling-wrapper">
 				<div className="card-deck d-flex flex-nowrap">
 					<CardPerson />
@@ -24,7 +24,7 @@ export const Home = () => (
 		</div>
 
 		<div className="container-fluid mt-3">
-			<h2 className="my-2 text-warning">Planets</h2>
+			<h2 className="my-2 text-light">Planets</h2>
 			<div className="d-flex flex-nowrap scrolling-wrapper">
 				<div className="card-deck d-flex flex-nowrap">
 					<CardPlanet />
@@ -41,7 +41,7 @@ export const Home = () => (
 			</div>
 		</div>
 		<div className="container-fluid mt-3">
-			<h2 className="my-2 text-warning">Vehicles</h2>
+			<h2 className="my-2 text-light">Vehicles</h2>
 			<div className="d-flex flex-nowrap scrolling-wrapper">
 				<div className="card-deck d-flex flex-nowrap">
 					<CardVehicle />
