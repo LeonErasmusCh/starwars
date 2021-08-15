@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from "bootstrap";
 import { ListBtn } from "./list_btn";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	return (
@@ -18,9 +19,6 @@ export const Navbar = () => {
 					</span>
 				</Link>
 				<div className="ml-auto">
-					{/*<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-    </Link>*/}
 					<ListBtn />
 				</div>
 			</div>

@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const ListBtn = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div>
 			<div className="dropdown show">
@@ -17,7 +20,7 @@ export const ListBtn = () => {
 
 				<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
 					<a className="dropdown-item" href="#">
-						Action
+						{favs}
 					</a>
 					<a className="dropdown-item" href="#">
 						Another action
