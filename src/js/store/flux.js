@@ -41,8 +41,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addReadingList: () => {
 				const store = getStore();
-				setStore({ people: result.results });
-				console.log(store.people);
+				setStore({ readingList: result.results });
+				console.log(store.readingList);
 			}
 
 			/**

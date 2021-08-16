@@ -20,7 +20,7 @@ export const ListBtn = () => {
 
 				<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
 					<a className="dropdown-item" href="#">
-						{favs}
+						{store.readingList}
 					</a>
 					<a className="dropdown-item" href="#">
 						Another action

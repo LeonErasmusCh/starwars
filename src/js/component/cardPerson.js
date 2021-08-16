@@ -1,14 +1,12 @@
 import React, { Component, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
 
 export const CardPerson = () => {
 	const { store, actions } = useContext(Context);
-	const addNewArray = () => {
-		const favs = [];
-		favs.push(store.people);
-	};
+	const params = useParams();
+
 	return (
 		<>
 			{store.people.map((person, position) => {
@@ -24,18 +22,19 @@ export const CardPerson = () => {
 									content.{" "}
 								</p>
 
-								<Link to="./person">
+								<Link to={"./person/" + person.uid}>
 									<a href="#" className="btn btn-warning text-dark">
 										Read more
 									</a>
 								</Link>
+
 								<a href="#" className="btn btn-outline-warning float-right">
 									<i className="fas fa-heart text-warning" />
 								</a>
 								<button
 									onClick={() => {
 										alert(person.name);
-										addNewArray();
+										addReadingList();
 									}}>
 									Save
 								</button>
