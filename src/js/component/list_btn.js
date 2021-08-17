@@ -19,9 +19,14 @@ export const ListBtn = () => {
 				</a>
 
 				<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					<a className="dropdown-item" href="#">
-						{store.favourites}
-					</a>
+					{store.favourites.map((index, item) => {
+						return (
+							<a className="dropdown-item" key={index}>
+								Favourite item: {item}
+							</a>
+						);
+					})}
+
 					<a className="dropdown-item" href="#">
 						Another action
 					</a>
