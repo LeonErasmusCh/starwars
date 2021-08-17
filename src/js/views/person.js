@@ -9,7 +9,7 @@ export const Person = () => {
 	return (
 		<div className="text-white">
 			<h1>Character {params.personid}</h1>
-			<p>Datos</p>
+            <p>Gender {} </p>
 			<p>Datos</p>
 			<p>Datos</p>
 			<p>Datos</p>
