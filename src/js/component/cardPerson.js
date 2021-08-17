@@ -34,7 +34,10 @@ export const CardPerson = () => {
 								<button
 									onClick={() => {
 										alert(person.name);
-										addReadingList();
+										{
+											store.favourites.push(person.name);
+											console.log(store.favourites);
+										}
 									}}>
 									Save
 								</button>
