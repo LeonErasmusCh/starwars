@@ -22,7 +22,7 @@ export const CardPerson = () => {
 									content.{" "}
 								</p>
 
-								<Link to={"./person/" + person.uid}>
+								<Link to={"./person/" + person.name}>
 									<a href="#" className="btn btn-warning text-dark">
 										Read more
 									</a>

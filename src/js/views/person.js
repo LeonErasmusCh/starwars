@@ -8,8 +8,7 @@ export const Person = () => {
 	const params = useParams();
 	return (
 		<div className="text-white">
-			<h1>Character {params.personid}</h1>
-            <p>Gender {} </p>
+			<h1>{params.personid}</h1>
 			<p>Datos</p>
 			<p>Datos</p>
 			<p>Datos</p>

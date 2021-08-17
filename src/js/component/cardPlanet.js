@@ -20,7 +20,7 @@ export const CardPlanet = () => {
 									content.{" "}
 								</p>
 
-								<Link to="./planet">
+								<Link to={"./planet/" + planet.name}>
 									<a href="#" className="btn btn-warning text-dark">
 										Read more
 									</a>

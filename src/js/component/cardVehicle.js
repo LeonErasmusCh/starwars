@@ -20,7 +20,7 @@ export const CardVehicle = () => {
 									content.{" "}
 								</p>
 
-								<Link to="./planet">
+								<Link to={"./vehicle/" + vehicle.uid + vehicle.name}>
 									<a href="#" className="btn btn-warning text-dark">
 										Read more
 									</a>
