@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			vehicles: [],
 			peopleList: [],
-			planetList: []
+			planetList: [],
+			vehicleList: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -68,6 +69,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 						})
 						.catch(error => console.log("error", error));
 				}
+			},
+
+			vehicleList: () => {
+				const store = getStore();
+				const url = "https://www.swapi.tech/api/vehicles/";
+				store.vehicles.map(value => {
+					fetch(url + value.uid)
+						.then(response => response.json())
+						.then(result => {
+							setStore({ vehicleList: result.results });
+							console.log(store.vehicleList);
+						})
+						.catch(error => console.log("error", error));
+				});
 			}
 		}
 	};
