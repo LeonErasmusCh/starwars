@@ -37,6 +37,7 @@ export const CardPerson = () => {
 
 										store.favourites.push(person.name);
 										console.log("My store array Favourites: ", store.favourites);
+										console.log(favourites);
 									}}>
 									Save
 								</button>
