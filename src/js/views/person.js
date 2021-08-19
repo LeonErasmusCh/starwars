@@ -9,10 +9,10 @@ export const Person = props => {
 
 	return (
 		<>
+			<h1>{params.personid}</h1>
 			{store.peopleList.map((value, position) => {
 				return (
 					<div className="text-white" key={postion}>
-						{/*<h1>{params.personid}</h1>*/}
 						<p>{value.uid}</p>
 						<p>Datos</p>
 						<p>Datos</p>
