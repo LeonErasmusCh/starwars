@@ -10,8 +10,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicleList: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-
 			loadPeople: () => {
 				const store = getStore();
 				fetch("https://www.swapi.tech/api/people")
@@ -74,11 +72,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicleList: () => {
 				const store = getStore();
 				const url = "https://www.swapi.tech/api/vehicles/";
-				store.vehicles.map(value => {
-					fetch(url + value.uid)
+				const vehicleArray = [4, 7, 6, 8, 14, 18, 16, 19, 20, 24];
+				vehicleArray.map(value => {
+					fetch(url + value)
 						.then(response => response.json())
 						.then(result => {
-							setStore({ vehicleList: result.results });
+							setStore({ vehicleList: result.result });
 							console.log(store.vehicleList);
 						})
 						.catch(error => console.log("error", error));
