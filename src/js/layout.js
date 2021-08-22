@@ -30,12 +30,6 @@ const Layout = () => {
 						<Route exact path="/person/:personid">
 							<Person />
 						</Route>
-						<Route exact path="/planet/:planetid">
-							<Planet />
-						</Route>
-						<Route exact path="/vehicle/:vehicleid">
-							<Vehicle />
-						</Route>
 
 						<Route>
 							<h1>Not found!</h1>

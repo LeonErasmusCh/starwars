@@ -25,13 +25,6 @@ export const ListBtn = () => {
 					<a className="dropdown-item" href="#">
 						Something else here
 					</a>
-					{store.favourites.map((item, index) => {
-						return (
-							<a className="dropdown-item" key={index}>
-								Favourite item: {item}
-							</a>
-						);
-					})}
 				</div>
 			</div>
 		</div>
