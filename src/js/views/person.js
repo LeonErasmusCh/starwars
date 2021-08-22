@@ -6,9 +6,11 @@ import { Context } from "../store/appContext";
 export const Person = () => {
 	const { store, actions } = useContext(Context);
 	const { personid } = useParams();
+
 	useEffect(() => {
 		actions.getPersonDetail(personid);
 	}, []);
+
 	return (
 		<div>
 			<h1>Name: {store.personDetail.name}</h1>

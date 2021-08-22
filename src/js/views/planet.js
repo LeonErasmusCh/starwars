@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Planet = () => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
+	const { planetid } = useParams();
+
+	useEffect(() => {
+		actions.planetDetail(planetid);
+	}, []);
+
 	return (
-		<div className="text-white">
-			<h1>{params.planetid}</h1>
-			<p>Datos</p>
-			<p>Datos</p>
-			<p>Datos</p>
-			<p>Datos</p>
+		<div>
+			<h1>Name: {store.planetDetail.name}</h1>
+			<h1>Diameter: {store.planetDetail.diameter}</h1>
+			<h1>Population: {store.planetDetail.population}</h1>
+			<h1>Terrain: {store.planetDetail.terrain}</h1>
 		</div>
 	);
 };
