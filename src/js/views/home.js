@@ -5,6 +5,7 @@ import { Card } from "../component/card";
 import { CardPerson } from "../component/cardPerson";
 //import { CardVehicle } from "../component/cardVehicle";
 import { PlanetCard } from "../component/planetCard";
+import { VehicleCard } from "../component/vehicleCard";
 
 export const Home = () => (
 	<>
@@ -18,6 +19,12 @@ export const Home = () => (
 		<div className="container-fluid scrolling-wrapper">
 			<div className="row d-flex flex-nowrap">
 				<PlanetCard />
+			</div>
+		</div>
+		<h2 className="my-2 text-light text-center">Vehicle</h2>
+		<div className="container-fluid scrolling-wrapper">
+			<div className="row d-flex flex-nowrap">
+				<VehicleCard />
 			</div>
 		</div>
 	</>

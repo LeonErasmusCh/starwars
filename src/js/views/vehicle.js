@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Vehicle = () => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
+	const { vehicleid } = useParams();
+
+	useEffect(() => {
+		actions.vehicleDetail(vehicleid);
+	}, []);
+
 	return (
-		<div className="text-white">
-			<h1>
-				{params.vehicleid}
-				{params.name}
-			</h1>
-			<p>Datos</p>
-			<p>Datos</p>
-			<p>Datos</p>
-			<p>Datos</p>
+		<div>
+			<h1>Name: {store.vehicleDetail.name}</h1>
+			<h1>Model: {store.vehicleDetail.model}</h1>
+			<h1>vehicle Class: {store.vehicleDetail.vehicle_class}</h1>
+			<h1>Crew: {store.vehicleDetail.crew}</h1>
 		</div>
 	);
 };
