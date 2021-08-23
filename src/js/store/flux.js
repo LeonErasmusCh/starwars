@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			//favourites: [],
+			favourites: [],
 			loadPeople: [],
 			personDetail: {},
 			loadPlanets: [],

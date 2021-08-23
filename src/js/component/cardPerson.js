@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
@@ -6,6 +6,7 @@ import "../../styles/home.scss";
 export const CardPerson = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	const [count, setCount] = useState(0);
 
 	return (
 		<>
@@ -31,9 +32,8 @@ export const CardPerson = () => {
 								</a>
 								<button
 									onClick={() => {
-										alert(person.name);
-
-										store.favourites.push(person.name);
+										setCount(count + 1);
+										store.favourites.push({ name: person.name });
 										console.log("My store array Favourites: ", store.favourites);
 									}}>
 									Save
