@@ -6,7 +6,7 @@ import "../../styles/home.scss";
 export const CardPerson = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	const [count, setCount] = useState(0);
+	const [favourites, setFavourites] = useState([]);
 
 	return (
 		<>
@@ -30,14 +30,7 @@ export const CardPerson = () => {
 								<a href="#" className="btn btn-outline-warning float-right">
 									<i className="fas fa-heart text-warning" />
 								</a>
-								<button
-									onClick={() => {
-										setCount(count + 1);
-										store.favourites.push({ name: person.name });
-										console.log("My store array Favourites: ", store.favourites);
-									}}>
-									Save
-								</button>
+								<button onClick={actions.addFavourites}>Save</button>
 							</div>
 						</div>
 					</div>

@@ -13,10 +13,20 @@ export const Vehicle = () => {
 
 	return (
 		<div>
-			<h1>Name: {store.vehicleDetail.name}</h1>
-			<h1>Model: {store.vehicleDetail.model}</h1>
-			<h1>vehicle Class: {store.vehicleDetail.vehicle_class}</h1>
-			<h1>Crew: {store.vehicleDetail.crew}</h1>
+			<div className="container text-white text-center mt-5">
+				<h1>
+					<span className="text-warning">Name</span> {store.vehicleDetail.name}
+				</h1>
+				<h3>
+					<span className="text-warning">Model</span> {store.vehicleDetail.model}
+				</h3>
+				<h3>
+					<span className="text-warning">Vehicle Class </span> {store.vehicleDetail.vehicle_class}
+				</h3>
+				<h3>
+					<span className="text-warning">Crew</span> {store.vehicleDetail.crew}
+				</h3>
+			</div>
 		</div>
 	);
 };

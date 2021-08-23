@@ -13,10 +13,20 @@ export const Person = () => {
 
 	return (
 		<div>
-			<h1>Name: {store.personDetail.name}</h1>
-			<h1>Skin Color: {store.personDetail.skin_color}</h1>
-			<h1>Hair Color: {store.personDetail.hair_color}</h1>
-			<h1>Eye Color: {store.personDetail.eye_color}</h1>
+			<div className="container text-white text-center mt-5">
+				<h1>
+					<span className="text-warning">Name</span> {store.personDetail.name}
+				</h1>
+				<h3>
+					<span className="text-warning">Skin Color</span> {store.personDetail.skin_color}
+				</h3>
+				<h3>
+					<span className="text-warning">Hair Color</span> {store.personDetail.hair_color}
+				</h3>
+				<h3>
+					<span className="text-warning">Eye Color</span> {store.personDetail.eye_color}
+				</h3>
+			</div>
 		</div>
 	);
 };
