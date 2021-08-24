@@ -69,10 +69,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("vehicleDetail", store.vehicleDetail);
 					})
 					.catch(error => console.log("error", error));
-			},
-			addFavourites: event => {
-				setStore({ element });
-				console.log(store.favourites);
 			}
 		}
 	};
