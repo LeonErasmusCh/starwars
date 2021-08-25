@@ -69,6 +69,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log("vehicleDetail", store.vehicleDetail);
 					})
 					.catch(error => console.log("error", error));
+			},
+			loadFavourites: favs => {
+				const store = getStore();
+				console.log("favourite in store: ", store.favourites);
 			}
 		}
 	};

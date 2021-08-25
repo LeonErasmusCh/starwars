@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
@@ -7,6 +7,10 @@ export const PlanetCard = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	const [favs, setFavs] = useState([]);
+
+	useEffect(() => {
+		console.log(store.favourites);
+	});
 
 	return (
 		<>
@@ -31,12 +35,11 @@ export const PlanetCard = () => {
 									<i className="fas fa-heart text-warning" />
 								</a>
 								<button
-									value={favs}
 									onClick={() => {
 										setFavs([...favs, planet.name]);
-										console.log(favs);
+										store.favourites.push(planet.name);
 									}}>
-									Save
+									Send to fluxStore
 								</button>
 							</div>
 						</div>
