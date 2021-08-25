@@ -26,18 +26,14 @@ export const VehicleCard = () => {
 									</a>
 								</Link>
 
-								<a href="#" className="btn btn-outline-warning float-right">
+								<a
+									href="#"
+									className="btn btn-outline-warning float-right"
+									onClick={() => {
+										store.favourites.push(vehicle.name);
+									}}>
 									<i className="fas fa-heart text-warning" />
 								</a>
-								<button
-									onClick={() => {
-										alert(person.name);
-
-										store.favourites.push(person.name);
-										console.log("My store array Favourites: ", store.favourites);
-									}}>
-									Save
-								</button>
 							</div>
 						</div>
 					</div>

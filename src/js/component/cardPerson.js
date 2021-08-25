@@ -27,10 +27,14 @@ export const CardPerson = () => {
 									</a>
 								</Link>
 
-								<a href="#" className="btn btn-outline-warning float-right">
+								<a
+									href="#"
+									className="btn btn-outline-warning float-right"
+									onClick={() => {
+										store.favourites.push(person.name);
+									}}>
 									<i className="fas fa-heart text-warning" />
 								</a>
-								<button onClick={actions.addFavourites}>Save</button>
 							</div>
 						</div>
 					</div>

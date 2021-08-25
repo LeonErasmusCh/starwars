@@ -8,9 +8,12 @@ export const PlanetCard = () => {
 	const params = useParams();
 	const [favs, setFavs] = useState([]);
 
-	useEffect(() => {
-		console.log(store.favourites);
-	});
+	useEffect(
+		() => {
+			console.log("useEffect in planetCard: ", store.favourites);
+		},
+		[favs]
+	);
 
 	return (
 		<>
@@ -31,16 +34,15 @@ export const PlanetCard = () => {
 									</a>
 								</Link>
 
-								<a href="#" className="btn btn-outline-warning float-right">
-									<i className="fas fa-heart text-warning" />
-								</a>
-								<button
+								<a
+									href="#"
+									className="btn btn-outline-warning float-right"
 									onClick={() => {
 										setFavs([...favs, planet.name]);
 										store.favourites.push(planet.name);
 									}}>
-									Send to fluxStore
-								</button>
+									<i className="fas fa-heart text-warning" />
+								</a>
 							</div>
 						</div>
 					</div>
