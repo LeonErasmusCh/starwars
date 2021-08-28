@@ -24,8 +24,8 @@ export const ListBtn = () => {
 								{favourite}
 								<i
 									className="fa fa-times text-danger float-right"
-									onClick={() => {
-										actions.removeFavourites(name);
+									onClick={favourite => {
+										actions.removeFavourites(favourite);
 									}}
 								/>
 							</button>

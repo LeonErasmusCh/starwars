@@ -77,7 +77,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			removeFavourites: name => {
 				const store = getStore();
-				setStore(store.favourites.splice(name));
+				setStore(store.favourites.slice(name));
 				console.log("loadFavourites: ", store.favourites);
 			}
 		}
