@@ -15,25 +15,20 @@ export const VehicleCard = () => {
 						<div className="card m-1">
 							<div className="card-body">
 								<h5 className="card-title">{vehicle.name}</h5>
-								<p className="card-text">
-									{vehicle.uid}
-									Some quick example text to build on the card title and make up the bulk of the cards
-									content.
-								</p>
+
 								<Link to={"./vehicle/" + vehicle.uid}>
 									<a href="#" className="btn btn-warning text-dark">
 										Read more
 									</a>
 								</Link>
 
-								<a
-									href="#"
+								<button
 									className="btn btn-outline-warning float-right"
 									onClick={() => {
-										store.favourites.push(vehicle.name);
+										actions.loadFavourites(vehicle.name);
 									}}>
 									<i className="fas fa-heart text-warning" />
-								</a>
+								</button>
 							</div>
 						</div>
 					</div>

@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import loadFavourites from "../store/flux";
 import "../../styles/home.scss";
 
 export const CardPerson = () => {
@@ -16,25 +17,22 @@ export const CardPerson = () => {
 						<div className="card m-1">
 							<div className="card-body">
 								<h5 className="card-title">{person.name}</h5>
-								<p className="card-text">
-									{person.uid}
-									Some quick example text to build on the card title and make up the bulk of the cards
-									content.
-								</p>
+
 								<Link to={"./person/" + person.uid}>
 									<a href="#" className="btn btn-warning text-dark">
 										Read more
 									</a>
 								</Link>
 
-								<a
-									href="#"
+								<button
 									className="btn btn-outline-warning float-right"
 									onClick={() => {
-										store.favourites.push(person.name);
+										//setFavs(planet.name);
+										actions.loadFavourites(person.name);
+										console.log(store.favourites);
 									}}>
 									<i className="fas fa-heart text-warning" />
-								</a>
+								</button>
 							</div>
 						</div>
 					</div>

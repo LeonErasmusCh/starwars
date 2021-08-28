@@ -6,15 +6,6 @@ import "../../styles/home.scss";
 export const PlanetCard = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
-	const [favs, setFavs] = useState([]);
-
-	useEffect(
-		() => {
-			console.log("useEffect in planetCard: ", store.favourites);
-		},
-		[favs]
-	);
-
 	return (
 		<>
 			{store.loadPlanets.map((planet, position) => {
@@ -23,26 +14,19 @@ export const PlanetCard = () => {
 						<div className="card m-1">
 							<div className="card-body">
 								<h5 className="card-title">{planet.name}</h5>
-								<p className="card-text">
-									{planet.uid}
-									Some quick example text to build on the card title and make up the bulk of the cards
-									content.
-								</p>
+
 								<Link to={"./planet/" + planet.uid}>
 									<a href="#" className="btn btn-warning text-dark">
 										Read more
 									</a>
 								</Link>
-
-								<a
-									href="#"
+								<button
 									className="btn btn-outline-warning float-right"
 									onClick={() => {
-										setFavs([...favs, planet.name]);
-										store.favourites.push(planet.name);
+										actions.loadFavourites(planet.name);
 									}}>
 									<i className="fas fa-heart text-warning" />
-								</a>
+								</button>
 							</div>
 						</div>
 					</div>

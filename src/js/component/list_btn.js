@@ -1,9 +1,10 @@
-import React, { Component, useContext, useState } from "react";
+import React, { Component, useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const ListBtn = () => {
 	const { store, actions } = useContext(Context);
+	const [dropdownlist, setDropdownlist] = useState([store.favourites]);
 
 	return (
 		<>
@@ -14,13 +15,19 @@ export const ListBtn = () => {
 					data-toggle="dropdown"
 					aria-haspopup="true"
 					aria-expanded="false">
-					Right-aligned menu
+					Favourites
 				</button>
-				<div className="dropdown-menu dropdown-menu-right">
+				<div className="dropdown-menu dropdown-menu-right" style={{ width: "250px" }}>
 					{store.favourites.map((favourite, position) => {
 						return (
 							<button className="dropdown-item" type="button" key={position}>
 								{favourite}
+								<i
+									className="fa fa-times text-danger float-right"
+									onClick={() => {
+										actions.removeFavourites(name);
+									}}
+								/>
 							</button>
 						);
 					})}

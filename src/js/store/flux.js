@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(result => {
 						setStore({ loadPeople: result.results });
-						console.log("load all people", store.loadPeople);
+						//console.log("load all people", store.loadPeople);
 					})
 					.catch(error => console.log("error", error));
 			},
@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(result => {
 						setStore({ personDetail: result.result.properties });
-						console.log("personDetail", store.personDetail);
+						//console.log("personDetail", store.personDetail);
 					})
 					.catch(error => console.log("error", error));
 			},
@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(result => {
 						setStore({ loadPlanets: result.results });
-						console.log("load all planets", store.loadPlanets);
+						//console.log("load all planets", store.loadPlanets);
 					})
 					.catch(error => console.log("error", error));
 			},
@@ -70,9 +70,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.catch(error => console.log("error", error));
 			},
-			loadFavourites: favs => {
+			loadFavourites: name => {
 				const store = getStore();
-				console.log("favourite in store: ", store.favourites);
+				setStore(store.favourites.push(name));
+				console.log("loadFavourites: ", store.favourites);
+			},
+			removeFavourites: name => {
+				const store = getStore();
+				setStore(store.favourites.splice(name));
+				console.log("loadFavourites: ", store.favourites);
 			}
 		}
 	};
