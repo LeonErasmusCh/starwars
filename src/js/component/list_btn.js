@@ -23,12 +23,14 @@ export const ListBtn = () => {
 							return (
 								<button className="dropdown-item" type="button" key={position}>
 									{favourite}
-									<i
-										className="fa fa-times text-danger float-right"
-										onClick={favourite => {
-											actions.removeFavourites(favourite);
-										}}
-									/>
+									<button className="btn btn-sm btn-outline-danger float-right">
+										<i
+											className="fa fa-times text-danger float-right"
+											onClick={index => {
+												actions.removeFavourites(favourite);
+											}}
+										/>
+									</button>
 								</button>
 							);
 						}

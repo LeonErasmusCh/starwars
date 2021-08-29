@@ -75,10 +75,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore(store.favourites.push(name));
 				console.log("loadFavourites: ", store.favourites);
 			},
-			removeFavourites: name => {
+			removeFavourites: index => {
 				const store = getStore();
-				setStore(store.favourites.slice(name));
-				console.log("loadFavourites: ", store.favourites);
+				console.log(index);
+				const newList = store.favourites.filter(key => key !== index);
+				setStore(newList);
 			}
 		}
 	};
