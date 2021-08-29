@@ -19,17 +19,19 @@ export const ListBtn = () => {
 				</button>
 				<div className="dropdown-menu dropdown-menu-right" style={{ width: "250px" }}>
 					{store.favourites.map((favourite, position) => {
-						return (
-							<button className="dropdown-item" type="button" key={position}>
-								{favourite}
-								<i
-									className="fa fa-times text-danger float-right"
-									onClick={favourite => {
-										actions.removeFavourites(favourite);
-									}}
-								/>
-							</button>
-						);
+						if (favourite !== undefined) {
+							return (
+								<button className="dropdown-item" type="button" key={position}>
+									{favourite}
+									<i
+										className="fa fa-times text-danger float-right"
+										onClick={favourite => {
+											actions.removeFavourites(favourite);
+										}}
+									/>
+								</button>
+							);
+						}
 					})}
 				</div>
 			</div>
