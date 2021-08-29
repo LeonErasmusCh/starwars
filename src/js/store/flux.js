@@ -73,13 +73,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			loadFavourites: name => {
 				const store = getStore();
 				setStore(store.favourites.push(name));
-				console.log("loadFavourites: ", store.favourites);
+				let uniqueValue = [...new Set(store.favourites)];
+				setStore({ favourites: uniqueValue });
 			},
 			removeFavourites: index => {
 				const store = getStore();
 				console.log(index);
 				const newList = store.favourites.filter(key => key !== index);
-				setStore(newList);
+				setStore({ favourites: newList });
 			}
 		}
 	};
