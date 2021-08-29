@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light border-bottom border-warning bg-dark mb-3">
+		<nav className="navbar navbar-light border-bottom border-secondary bg-dark mb-3">
 			<div className="container">
 				<Link to="/">
 					<span className="navbar-brand mb-0 h1">

@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(result => {
 						setStore({ personDetail: result.result.properties });
-						//console.log("personDetail", store.personDetail);
+						console.log("personDetail", store.personDetail);
 					})
 					.catch(error => console.log("error", error));
 			},
@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(result => {
 						setStore({ loadPlanets: result.results });
-						//console.log("load all planets", store.loadPlanets);
+						console.log("load all planets", store.loadPlanets);
 					})
 					.catch(error => console.log("error", error));
 			},

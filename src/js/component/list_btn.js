@@ -33,6 +33,8 @@ export const ListBtn = () => {
 									</button>
 								</button>
 							);
+						} else {
+							return <h5>buuu... your list is empty</h5>;
 						}
 					})}
 				</div>
