@@ -3,7 +3,6 @@ import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Card } from "../component/card";
 import { CardPerson } from "../component/cardPerson";
-//import { CardVehicle } from "../component/cardVehicle";
 import { PlanetCard } from "../component/planetCard";
 import { VehicleCard } from "../component/vehicleCard";
 
